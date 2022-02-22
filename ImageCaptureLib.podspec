@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ImageCaptureLib'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = 'A short description of ImageCaptureLib.'
 
 # This description is used to generate tags and improve search results.
@@ -28,9 +28,12 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/Abhinand-keyvalue/ImageCaptureLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = 'ImageCaptureLib/Classes/**/*'
+  s.ios.vendored_frameworks = 'ZeniyumImageCapture.xcframework' # Your XCFramework
+  s.dependency 'GoogleMLKit/FaceDetection', '2.5.0' # Third Party Dependency
+  s.dependency 'NVActivityIndicatorView/Extended'
+  s.dependency 'Alamofire', '~> 4.9.1'
   
   # s.resource_bundles = {
   #   'ImageCaptureLib' => ['ImageCaptureLib/Assets/*.png']

@@ -1,0 +1,11 @@
+framework module ZeniyumImageCapture {
+  umbrella header "ZeniyumImageCapture.h"
+
+  export *
+  module * { export * }
+}
+
+module ZeniyumImageCapture.Swift {
+    header "ZeniyumImageCapture-Swift.h"
+    requires objc
+}

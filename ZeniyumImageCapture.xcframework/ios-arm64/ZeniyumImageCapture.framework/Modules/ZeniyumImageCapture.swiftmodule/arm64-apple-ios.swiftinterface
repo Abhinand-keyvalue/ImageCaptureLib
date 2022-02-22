@@ -1,0 +1,69 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZeniyumImageCapture
+import AVFoundation
+import Alamofire
+import CoreVideo
+import Foundation
+import MLImage
+import MLKit
+import Metal
+import MetalKit
+import MetalPerformanceShaders
+import NVActivityIndicatorView
+import Swift
+import UIKit
+@_exported import ZeniyumImageCapture
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CameraViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) public class func initStoryBoard() -> UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) public class func initStoryBoardImages(images: [UIKit.UIImage]) -> UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Utils {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UIUtilities {
+  public static func addCircle(atPoint point: CoreGraphics.CGPoint, to view: UIKit.UIView, color: UIKit.UIColor, radius: CoreGraphics.CGFloat)
+  public static func addLineSegment(fromPoint: CoreGraphics.CGPoint, toPoint: CoreGraphics.CGPoint, inView: UIKit.UIView, color: UIKit.UIColor, width: CoreGraphics.CGFloat)
+  public static func addRectangle(_ rectangle: CoreGraphics.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
+  public static func addShape(withPoints points: [Foundation.NSValue]?, to view: UIKit.UIView, color: UIKit.UIColor)
+  public static func imageOrientation(fromDevicePosition devicePosition: AVFoundation.AVCaptureDevice.Position = .back) -> UIKit.UIImage.Orientation
+  public static func createUIImage(from imageBuffer: CoreVideo.CVImageBuffer, orientation: UIKit.UIImage.Orientation) -> UIKit.UIImage?
+  public static func createImageBuffer(from image: UIKit.UIImage) -> CoreVideo.CVImageBuffer?
+  @objc deinit
+}
+public enum APIRequestType : Swift.String {
+  case get
+  case post
+  case put
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIKit.UIViewController : NVActivityIndicatorView.NVActivityIndicatorViewable {
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BlurDetector : ObjectiveC.NSObject {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class CameraFeedManager : ObjectiveC.NSObject {
+  public func capturePhoto()
+  @objc deinit
+}
+extension ZeniyumImageCapture.CameraFeedManager : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+extension ZeniyumImageCapture.CameraFeedManager : AVFoundation.AVCapturePhotoCaptureDelegate {
+  @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+}
+extension ZeniyumImageCapture.APIRequestType : Swift.Equatable {}
+extension ZeniyumImageCapture.APIRequestType : Swift.Hashable {}
+extension ZeniyumImageCapture.APIRequestType : Swift.RawRepresentable {}
